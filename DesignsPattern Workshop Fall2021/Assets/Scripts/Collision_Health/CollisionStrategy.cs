@@ -4,7 +4,13 @@ using UnityEngine;
 
 public abstract class CollisionStrategy : MonoBehaviour
 {
-    public collisionGroups cGroup = collisionGroups.Undecided;
+    protected virtual void OnEnable()
+    {
+        if(cGroup == collisionGroups.Undecided)
+            Debug.Log(gameObject.name + ": this gameObject is undecided [CollisionStrategy]");
+    }
+
+    [SerializeField] protected collisionGroups cGroup = collisionGroups.Undecided;
 
     public enum collisionGroups
     {
@@ -12,4 +18,6 @@ public abstract class CollisionStrategy : MonoBehaviour
         Player = 1,
         Enemy = 2
     };
+
+    public collisionGroups CGroup { get => cGroup; }
 }

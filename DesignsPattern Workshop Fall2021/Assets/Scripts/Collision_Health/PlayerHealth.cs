@@ -6,7 +6,7 @@ public class PlayerHealth : HealthAbstract
 {
     public override void Hurt()
     {
-        healthPoints += 1;
+        healthPoints -= 1;
 
         if(healthPoints <= 0)
         {
