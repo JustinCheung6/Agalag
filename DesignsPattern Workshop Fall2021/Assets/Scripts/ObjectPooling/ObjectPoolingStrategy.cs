@@ -6,8 +6,10 @@ public abstract class ObjectPoolingStrategy : MonoBehaviour
 {
     public enum PoolType
     {
-        Undecided = 0,
-        BulletPool = 1
+        Undecided,
+        BulletPool,
+        EnemyPool,
+        CompositePool
     };
 
     [SerializeField] protected PoolType poolType;

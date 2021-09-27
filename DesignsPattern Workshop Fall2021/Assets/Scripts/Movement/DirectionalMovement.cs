@@ -35,9 +35,4 @@ public class DirectionalMovement : MovementStrategy
 
         transform.position += d * speed * Time.fixedDeltaTime;
     }
-
-    private void FixedUpdate()
-    {
-        Move();
-    }
 }

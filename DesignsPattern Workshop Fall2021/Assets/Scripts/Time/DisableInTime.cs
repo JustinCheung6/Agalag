@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisableInTime : TimeEventStrategy
+public class DisableInTime : MonoBehaviour, ITimeEvent
 {
     [SerializeField] protected float time = 10f;
 
@@ -10,7 +10,7 @@ public class DisableInTime : TimeEventStrategy
     private int interruptions = 0;
     private void OnEnable()
     {
-        Queue(time);
+        TimeManager.S.AddTimeEvent(this, time);
     }
     private void OnDisable()
     {
@@ -18,14 +18,14 @@ public class DisableInTime : TimeEventStrategy
             interruptions += 1;
     }
 
-    public override void Activate()
+    public void Activate()
     {
         if (interruptions > 0)
             interruptions--;
         else
         {
             running = false;
-            gameObject.GetComponent<PoolableObjectFlyweight>().ReturnObject();
+            gameObject.SetActive(false);
         }
     }
 }

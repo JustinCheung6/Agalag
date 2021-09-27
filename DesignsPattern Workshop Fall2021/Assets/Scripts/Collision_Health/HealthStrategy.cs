@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class HealthAbstract : CollisionStrategy
+public abstract class HealthStrategy : CollisionStrategy
 {
     [SerializeField] protected int healthPoints;
 

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PoolableObjectFlyweight : ObjectPoolingStrategy
 {
-
+    protected virtual void OnDisable()
+    {
+        StartCoroutine(Buffer());
+    }
     public void SetupPoolableObject(PoolType p)
     {
         poolType = p;
-        ReturnObject();
+        gameObject.SetActive(false);
 
     }
 
@@ -17,13 +20,18 @@ public class PoolableObjectFlyweight : ObjectPoolingStrategy
         if (gameObject.activeSelf)
             return null;
 
-        transform.parent = null;
+        transform.SetParent(null);
         objectPools[poolType].RemoveFromList(this);
         return this.gameObject;
     }
-    public void ReturnObject()
+
+    private IEnumerator Buffer()
     {
-        transform.parent = objectPools[poolType].transform;
-        gameObject.SetActive(false);
+        yield return new WaitForEndOfFrame();
+        ReturnObject();
+    }
+    protected virtual void ReturnObject()
+    {
+        transform.SetParent(objectPools[poolType].transform);
     }
 }

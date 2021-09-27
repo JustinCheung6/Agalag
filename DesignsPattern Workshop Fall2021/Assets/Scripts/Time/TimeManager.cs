@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour
 {
     private static TimeManager s = null;
 
-    private List<System.Tuple<TimeEventStrategy, float>> timeEvents = new List<System.Tuple<TimeEventStrategy, float>>();
+    private List<System.Tuple<ITimeEvent, float>> timeEvents = new List<System.Tuple<ITimeEvent, float>>();
 
     private void Awake()
     {
@@ -28,16 +28,13 @@ public class TimeManager : MonoBehaviour
 
         while (Time.time >= timeEvents[0].Item2)
         {
-            TimeEventStrategy timeEvent = timeEvents[0].Item1;
+            timeEvents[0].Item1.Activate();
             timeEvents.RemoveAt(0);
-
-            timeEvent.Activate();
 
             if (timeEvents.Count == 0)
                 return;
         }
     }
-
     public static TimeManager S
     {
         get
@@ -52,9 +49,9 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    public void AddTimeEvent(TimeEventStrategy timeEvent, float time)
+    public void AddTimeEvent(ITimeEvent timeEvent, float time)
     {
-        System.Tuple<TimeEventStrategy, float> tuple = new System.Tuple<TimeEventStrategy, float>(timeEvent, Time.time + time);
+        System.Tuple<ITimeEvent, float> tuple = new System.Tuple<ITimeEvent, float>(timeEvent, Time.time + time);
 
         if(timeEvents.Count == 0)
         {

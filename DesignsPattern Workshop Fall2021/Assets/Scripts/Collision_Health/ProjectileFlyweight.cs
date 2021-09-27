@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderFlyweight : CollisionStrategy
+public class ProjectileFlyweight : CollisionStrategy
 {
-    public ColliderFlyweight(collisionGroups c)
+    public ProjectileFlyweight(collisionGroups c)
     {
         cGroup = c;
     }
 
     protected void OnEnteredCollision(GameObject c)
     {
-        HealthAbstract h = c.GetComponent<HealthAbstract>();
+        HealthStrategy h = c.GetComponent<HealthStrategy>();
 
         if (h == null)
             return;
@@ -31,7 +31,6 @@ public class ColliderFlyweight : CollisionStrategy
     public void Destroy()
     {
         this.gameObject.SetActive(false);
-        Debug.Log("Disabled: " + gameObject.name + " - " + this.ToString());
     }
 
     protected void OnTriggerEnter2D(Collider2D c)
