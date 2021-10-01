@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public static MenuManager s;
+    private static MenuManager s;
+    public static MenuManager S { get => s; }
 
     [SerializeField] private GameObject pauseMenu = null;
     [SerializeField] private GameObject loseMenu = null;
+
+    [SerializeField] private GameObject levelClearUI = null;
+    private bool levelClearRunning = false;
+    [SerializeField] private GameObject levelUI = null;
+    private bool levelRunning = false;
 
     // 0 = unpaused, 1 = paused, 2 = gameOver
     private int pauseState = 0;
@@ -48,6 +54,8 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0;
 
         pauseMenu.SetActive(false);
+        levelClearUI.SetActive(false);
+        levelUI.SetActive(false);
         loseMenu.SetActive(true);
     }
     public void PauseGame()
@@ -57,6 +65,11 @@ public class MenuManager : MonoBehaviour
 
         pauseMenu.SetActive(true);
         loseMenu.SetActive(false);
+
+        levelClearRunning = levelClearUI.activeSelf;
+        levelRunning = levelUI.activeSelf;
+        levelClearUI.SetActive(false);
+        levelUI.SetActive(false);
     }
     public void ResumeGame()
     {
@@ -65,6 +78,9 @@ public class MenuManager : MonoBehaviour
 
         pauseMenu.SetActive(false);
         loseMenu.SetActive(false);
+
+        levelClearUI.SetActive(levelClearRunning);
+        levelUI.SetActive(levelRunning);
     }
     #endregion
 

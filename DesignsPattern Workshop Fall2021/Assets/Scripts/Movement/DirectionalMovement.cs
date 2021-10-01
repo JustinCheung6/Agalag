@@ -4,35 +4,24 @@ using UnityEngine;
 
 public class DirectionalMovement : MovementStrategy
 {
-    public enum Direction
+    [SerializeField] private Vector2 directionMagnitude = new Vector2();
+    private Transform parent = null;
+    private void Awake()
     {
-        up = 0,
-        right = 1,
-        down = 2,
-        left = 3,
-
-    };
-
-    [SerializeField] private Direction direction;
-
-    public void SetDirection(Direction d)
+        parent = transform;
+        while (parent.parent != null)
+            parent = parent.parent;
+    }
+    public Vector2 GetDirection() { return directionMagnitude; }
+    public void SetDirection(Vector2 direction) { directionMagnitude = direction; }
+    public void SwapDirection()
     {
-        direction = d;
+        directionMagnitude.x = -directionMagnitude.x;
+        directionMagnitude.y = -directionMagnitude.y;
     }
 
     public override void Move()
     {
-        Vector3 d = Vector3.zero;
-
-        if (direction == Direction.up)
-            d = Vector3.up;
-        else if (direction == Direction.right)
-            d = Vector3.right;
-        else if (direction == Direction.down)
-            d = Vector3.down;
-        else if (direction == Direction.left)
-            d = Vector3.left;
-
-        transform.position += d * speed * Time.fixedDeltaTime;
+        parent.position += (Vector3)directionMagnitude * speed * Time.fixedDeltaTime;
     }
 }

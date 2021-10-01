@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cf4c93ffbec5e564ab032de40fe11501
+guid: d9ff712db09034c4da44e4e84684e080
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3727313940415003478
-    second: Bullets_Down_0
+      213: -8239461355918626922
+    second: P-blue-b2_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -94,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bullets_Down_0
+      name: P-blue-b2_0
       rect:
         serializedVersion: 2
-        x: 624
-        y: 384
-        width: 192
-        height: 256
+        x: 304
+        y: 368
+        width: 417
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -108,8 +108,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa4c33728bbe54cc0800000000000000
-      internalID: -3727313940415003478
+      spriteID: 69f69e32d8d87ad80800000000000000
+      internalID: -8239461355918626922
       vertices: []
       indices: 
       edges: []

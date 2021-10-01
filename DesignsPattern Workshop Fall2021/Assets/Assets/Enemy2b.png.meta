@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: cf4c93ffbec5e564ab032de40fe11501
+guid: f38fced1d3d8fbb4caef2782b2bead0f
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3727313940415003478
-    second: Bullets_Down_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -92,28 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Bullets_Down_0
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 384
-        width: 192
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa4c33728bbe54cc0800000000000000
-      internalID: -3727313940415003478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class MovementStrategy : MonoBehaviour
 {
     [SerializeField] protected float speed;
-    public float Speed { set => speed = value; }
+    public float Speed { get => speed; }
 
     public abstract void Move();
 
@@ -13,4 +13,6 @@ public abstract class MovementStrategy : MonoBehaviour
     {
         Move();
     }
+
+    public void SetSpeed(float s) { speed = s; }
 }
