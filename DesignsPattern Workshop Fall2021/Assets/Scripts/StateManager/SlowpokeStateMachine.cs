@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowpokeClientStateMachine : StateMachineStrategy, ITimeEvent
+public class SlowpokeStateMachine : StateMachineStrategy, ITimeEvent
 {
     [Header("Attack Script")]
     [SerializeField] private SlowpokeClientShoot atkScript = null;

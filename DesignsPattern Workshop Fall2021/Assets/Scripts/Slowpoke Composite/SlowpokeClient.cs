@@ -16,7 +16,7 @@ public class SlowpokeClient : MonoBehaviour
     private List<SlowpokeComposite> composites = new List<SlowpokeComposite>();
     private int leafCount = 0;
 
-    [SerializeField] private SlowpokeClientStateMachine stateMachine = null;
+    [SerializeField] private SlowpokeStateMachine stateMachine = null;
 
     [SerializeField] private bool debug = false;
 

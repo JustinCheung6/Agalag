@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8626190175688654161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8626190175688654162}
+  - component: {fileID: 8626190175688654163}
+  - component: {fileID: 8626190175688654248}
+  - component: {fileID: 8626190175688654165}
+  - component: {fileID: 8626190175688654164}
+  - component: {fileID: 8626190175688654167}
+  - component: {fileID: 8626190175688654166}
+  m_Layer: 0
+  m_Name: SlowpokeHive
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8626190175688654162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8626190175688654163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44b31a1cc4af824dbdc5a3a425855a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compositePrefab: {fileID: 2908024991667509365, guid: 67ffc3d062eca764c9e7a49cc3851f9e, type: 3}
+  startColumns: 6
+  startRows: 4
+  spacing: 1.5
+  stateMachine: {fileID: 8626190175688654248}
+  debug: 0
+--- !u!114 &8626190175688654248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97741d5cd0bb7bb4c8b41a7b45c76f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  atkScript: {fileID: 8626190175688654167}
+  attackMoveScript: {fileID: 8626190175688654164}
+  moveDuration: 0.2
+  moveScript: {fileID: 8626190175688654166}
+--- !u!114 &8626190175688654165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90691bbe658f7744a8bced68442486f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cGroup: 4
+  moveScript: {fileID: 8626190175688654164}
+  lastCollider: {fileID: 0}
+--- !u!114 &8626190175688654164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770858b4a5067fd4aa530acdf2d0aef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  directionMagnitude: {x: 1, y: 0}
+--- !u!114 &8626190175688654167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942dfe01846df1a4a81f84005b984321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  client: {fileID: 8626190175688654163}
+  minfireRate: 0.5
+  maxfireRate: 1.5
+--- !u!114 &8626190175688654166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626190175688654161}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770858b4a5067fd4aa530acdf2d0aef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  directionMagnitude: {x: 0, y: -1}
